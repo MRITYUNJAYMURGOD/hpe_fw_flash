@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #f0f2f5;
+}
+
+h1, h2 {
+    color: #003366;
+}
+
+#app {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 7px rgba(0,0,0,0.1);
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 8px;
+    width: 300px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+}
+
+button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: #0078d7;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005ea1;
+}
+
+.flash-button {
+    background-color: #d9534f;
+}
+
+.flash-button:hover {
+    background-color: #c9302c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0078d7;
+    color: white;
+    text-align: left;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.remove-btn {
+    background-color: #ff4c4c;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #b32c2c;
+}

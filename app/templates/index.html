@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HPE FwPkg Flashing Tool</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div id="app">
+    <h1>HPE FwPkg Flashing Tool</h1>
+
+    <!-- Servers Management -->
+    <section>
+      <h2>Servers</h2>
+      <input type="text" id="serverIpInput" placeholder="Enter Server IP" />
+      <input type="text" id="addServerUsername" placeholder="Server Username (optional)" />
+      <input type="password" id="addServerPassword" placeholder="Server Password (optional)" />
+      <button id="addServerBtn">Add Server</button>
+      <ul id="serverList"></ul>
+    </section>
+
+    <!-- Global Credentials -->
+    <section>
+      <h2>Global Credentials</h2>
+      <input type="text" id="usernameInput" placeholder="Username" />
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <button id="setCredsBtn">Set Global Credentials</button>
+    </section>
+
+    <!-- Firmware URL -->
+    <section>
+      <h2>Firmware Package URL</h2>
+      <input type="text" id="firmwareUrlInput" placeholder="https://example.com/firmware.fwpkg" />
+      <button id="setFirmwareUrlBtn">Set Firmware URL</button>
+    </section>
+
+    <!-- Flashing Control -->
+    <section>
+      <button id="flashAllBtn" class="flash-button">Start Flashing All Servers</button>
+    </section>
+
+    <!-- Server Status -->
+    <section>
+      <h2>Server Status</h2>
+      <table id="statusTable" border="1" cellpadding="5">
+        <thead>
+          <tr><th>IP</th><th>Status</th><th>Progress</th><th>Message</th><th>Remove</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

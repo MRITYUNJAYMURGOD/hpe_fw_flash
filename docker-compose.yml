@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python run.py
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - REDIS_URL=redis://redis:6379/0
+      # Add your environment variables here or configure externally
+      # - HPE_FW_USERNAME=admin
+      # - HPE_FW_PASSWORD=yourpassword
+      # - HPE_FW_FIRMWARE_URL=https://example.com/firmware.fwpkg
+    depends_on:
+      - redis
+
+  celery_worker:
+    build: .
+    command: celery -A celery_worker.celery worker --loglevel=info
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      # replicate any env vars needed here too
+      # - HPE_FW_USERNAME=admin
+      # - HPE_FW_PASSWORD=yourpassword
+      # - HPE_FW_FIRMWARE_URL=https://example.com/firmware.fwpkg
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
